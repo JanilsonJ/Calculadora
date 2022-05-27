@@ -24,7 +24,7 @@ class Calculator {
         
         result = eval(`${previusOperandFloat} ${this.operation} ${currentOperandFloat}`);
         
-        this.currentOperand = result;
+        this.currentOperand = parseFloat(result);
         this.operation = undefined;
         this.previousOperand = "";
     }
@@ -35,8 +35,12 @@ class Calculator {
 
         if (this.currentOperand == "" && this.previousOperand != ""){
             this.operation = operation;
-            this.previousOperand = `${this.previousOperand.split(' ')[0]}`;
+            this.previousOperand = `${this.previousOperand}`;
+            return;
+        }
 
+        if (operation == "x²"){
+            this.currentOperand = Math.pow(this.currentOperand, 2);
             return;
         }
 
