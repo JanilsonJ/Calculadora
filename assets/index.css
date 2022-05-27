@@ -1,0 +1,78 @@
+:root {
+    box-sizing: border-box;
+    font-family: 'Chakra Petch', sans-serif;
+    font-weight: bold;
+}
+
+/* Body */
+body {
+    background-color: #172c42;
+    background-image: url("https://www.transparenttextures.com/patterns/graphy-dark.png");
+}
+
+/* Calculadora */
+
+.grid-container {
+    display: grid;
+    justify-content: center;
+    align-content: center;
+
+    min-height: 100vh;
+
+    grid-template-columns: repeat(4, 100px);
+    grid-template-rows: minmax(120px, auto) repeat(5, 100px);
+}
+
+.grid-container > button {
+    cursor: pointer;
+
+    font-size: 1.5rem;
+    
+    /*border: 1px solid #111;*/
+    
+    background-color: #232323;
+    color: #fcfcfc;
+}
+
+.grid-container > button:hover {
+    background-color: #c8c8c8;
+    color: #181818;
+}
+
+.grid-container > .action {
+    background-color: #b5b5b5;
+}
+
+.grid-container > .operator {
+    background-color: #dc9209;
+}
+
+.span-two {
+    grid-column: span 2;
+}
+
+.grid-container > .output {
+    grid-column: 1 / -1;
+
+    background-color: #4b4b4b;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-around;
+
+    padding: 10px;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+
+.grid-container > .output > .previous-operand {
+    color: #fcfcfcca;
+    font-size: 1.5rem;
+}
+
+.grid-container > .output > .current-operand {
+    color: #ffffff;
+    font-size: 1.5rem;
+}
+
