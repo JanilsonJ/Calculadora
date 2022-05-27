@@ -30,8 +30,15 @@ class Calculator {
     }
 
     chooseOperation(operation) {
-        if (this.currentOperand == "")
+        if (this.currentOperand == "" && this.previousOperand == "")
             return;
+
+        if (this.currentOperand == "" && this.previousOperand != ""){
+            this.operation = operation;
+            this.previousOperand = `${this.previousOperand.split(' ')[0]}`;
+
+            return;
+        }
 
         if (this.previousOperand != "")
             this.calculate();
