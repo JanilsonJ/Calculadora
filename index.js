@@ -33,16 +33,18 @@ class Calculator {
         if (this.currentOperand == "" && this.previousOperand == "")
             return;
 
+        if (operation == "x²"){
+            if (this.currentOperand != "" && this.previousOperand == "")
+                this.currentOperand = Math.pow(this.currentOperand, 2);
+            return;
+        }
+
         if (this.currentOperand == "" && this.previousOperand != ""){
             this.operation = operation;
             this.previousOperand = `${this.previousOperand}`;
             return;
         }
 
-        if (operation == "x²"){
-            this.currentOperand = Math.pow(this.currentOperand, 2);
-            return;
-        }
 
         if (operation == "+/-"){
             this.currentOperand = -1 * this.currentOperand;
@@ -144,6 +146,8 @@ document.addEventListener('keydown', key => {
         calculator.calculate();
     else if (comando == 'Escape')
         calculator.clear();
+    else if (comando == 'Backspace')
+        calculator.delete();
 
     calculator.updateDisplay()
 })
