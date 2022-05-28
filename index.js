@@ -129,3 +129,21 @@ deleteButton.addEventListener('click', () => {
     calculator.delete();
     calculator.updateDisplay();
 })
+
+/* Eventos de Teclado */
+
+document.addEventListener('keydown', key => {
+    let operadores = ['+', '-', '*', '/']
+    let comando = key.key;
+
+    if (!isNaN(comando) || key.key == '.')
+        calculator.appendNumber(comando);
+    else if (operadores.includes(comando))
+        calculator.chooseOperation(comando);
+    else if (comando == '=' || comando == 'Enter')
+        calculator.calculate();
+    else if (comando == 'Escape')
+        calculator.clear();
+
+    calculator.updateDisplay()
+})
