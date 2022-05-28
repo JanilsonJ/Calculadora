@@ -12,8 +12,17 @@ body {
     background-image: url("https://www.transparenttextures.com/patterns/inspiration-geometry.png");
 
     display: flex;
-    justify-content: center;
-    align-content: center;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.texto {
+    height: 6vh;
+    color: #fcfcfc;
+
+    display: flex;
+    align-items: center;
 }
 
 /* Calculadora */
@@ -24,8 +33,8 @@ body {
     align-content: center;
     grid-gap: 4px 4px;
 
-    margin-top: 8vh;
-    min-height: 80vh;
+    height: 640px;
+    width: 420px;
 
     grid-template-columns: repeat(4, 100px);
     grid-template-rows: minmax(120px, auto) repeat(5, 100px);
